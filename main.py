@@ -20,6 +20,81 @@ def read_root():
 def hello():
     return {"message": "Hello from the backend API!"}
 
+# Sample products endpoint for the fashion + accessories site
+@app.get("/api/products")
+def get_products():
+    # Static showcase data for now (no persistence required yet)
+    return {
+        "items": [
+            {
+                "id": "ring-kintsugi",
+                "name": "Kintsugi Ring",
+                "price": 120,
+                "currency": "USD",
+                "category": "Jewelry",
+                "color": "Brass / Porcelain",
+                "image": "https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?q=80&w=1200&auto=format&fit=crop",
+                "badge": "Hand-mended",
+                "desc": "Porcelain shard set in raw brass, gold-resined seams that honor the crack."
+            },
+            {
+                "id": "tote-concrete",
+                "name": "Concrete Tote",
+                "price": 85,
+                "currency": "USD",
+                "category": "Bags",
+                "color": "Ash Grey",
+                "image": "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop",
+                "badge": "Brut Minimal",
+                "desc": "Heavy canvas with exposed stitching and oversized industrial webbing."
+            },
+            {
+                "id": "scarf-moss",
+                "name": "Moss Silk Scarf",
+                "price": 65,
+                "currency": "USD",
+                "category": "Scarves",
+                "color": "Moss / Stone",
+                "image": "https://images.unsplash.com/photo-1520975922284-9e0ce8275ca6?q=80&w=1200&auto=format&fit=crop",
+                "badge": "Naturally Dyed",
+                "desc": "Hand-dyed with foraged pigments; tone variance embraced."
+            },
+            {
+                "id": "boot-raw",
+                "name": "Raw Edge Boot",
+                "price": 240,
+                "currency": "USD",
+                "category": "Footwear",
+                "color": "Char / Umber",
+                "image": "https://images.unsplash.com/photo-1543508282-6319a3e2621f?q=80&w=1200&auto=format&fit=crop",
+                "badge": "Unfinished Hem",
+                "desc": "Sturdy leather with unapologetic seams and squared toe."
+            },
+            {
+                "id": "bangle-patina",
+                "name": "Patina Bangle",
+                "price": 48,
+                "currency": "USD",
+                "category": "Jewelry",
+                "color": "Oxidized Brass",
+                "image": "https://images.unsplash.com/photo-1537183645340-1d0f2f2b5e1f?q=80&w=1200&auto=format&fit=crop",
+                "badge": "Aged Finish",
+                "desc": "Surface weathering varies; each piece tells its own story."
+            },
+            {
+                "id": "cap-raw",
+                "name": "Raw Canvas Cap",
+                "price": 36,
+                "currency": "USD",
+                "category": "Headwear",
+                "color": "Bone / Ink",
+                "image": "https://images.unsplash.com/photo-1520975922284-9e0ce8275ca6?q=80&w=1200&auto=format&fit=crop",
+                "badge": "Frayed Edge",
+                "desc": "Unlined, adjustable, sun-softened look from day one."
+            }
+        ]
+    }
+
 @app.get("/test")
 def test_database():
     """Test endpoint to check if database is available and accessible"""
